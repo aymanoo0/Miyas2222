@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق شبكة المياس</title>
+    <meta name="description" content="منصتك الموثوقة لخدمات الدفع الإلكتروني وشحن الألعاب والبطاقات الرقمية">
+    
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN للإسراع، يمكن تحميله محلياً إذا أردت) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ملف التنسيقات الخاص بنا -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- إعدادات Tailwind المخصصة -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#b91c1c', // أحمر داكن
+                        secondary: '#fbbf24', // ذهبي
+                        accent: '#fef2f2', 
+                        surface: '#ffffff',
+                    },
+                    fontFamily: {
+                        sans: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col relative overflow-x-hidden">
+
+    <!-- خلفية زخرفية -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="floating-shape bg-red-100 w-96 h-96 -top-20 -right-20 opacity-50"></div>
+        <div class="floating-shape bg-yellow-50 w-80 h-80 bottom-0 left-0 opacity-50"></div>
+        <div class="absolute inset-0 bg-dots opacity-30"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-start items-center gap-3">
+            <img src="images/logo.png" alt="شبكة المياس" class="h-14 w-auto object-contain">
+            <div class="flex flex-col">
+                <h1 class="text-xl font-bold text-primary leading-none mt-1">تطبيق شبكة المياس</h1>
+                <span class="text-xs font-medium text-amber-500 mt-1">لخدمات الدفع الإلكتروني</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-6 max-w-6xl relative z-10">
+        
+        <!-- السلايدر -->
+        <div class="relative w-full aspect-[2/1] md:h-80 bg-gray-200 rounded-3xl overflow-hidden shadow-lg mb-10 group border-4 border-white">
+            <div id="slider-track" class="relative w-full h-full">
+                <!-- شريحة 1 -->
+                <div class="slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-100">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/315180108966463.5fca25e2277ce.jpg" alt="Banner 1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-red-900/80 to-transparent flex items-center">
+                        <div class="px-8 md:px-16 text-white w-2/3">
+                            <h2 class="text-2xl md:text-5xl font-bold mb-2">عروض حصرية</h2>
+                            <p class="text-sm md:text-xl text-white/90 mb-4">باقات ومسابقات اسبوعية لا تفوت الفرصة</p>
+                            <button class="bg-white text-red-700 px-4 py-1.5 rounded-full font-bold text-sm hover:bg-gray-100">اشترك الآن</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- شريحة 2 -->
+                <div class="slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
+                    <img src="https://img.freepik.com/free-vector/realistic-gift-box-background_23-2149195657.jpg" alt="Banner 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-l from-purple-900/70 to-transparent flex items-center justify-end">
+                        <div class="px-8 md:px-16 text-white text-left w-2/3">
+                            <h2 class="text-2xl md:text-5xl font-bold mb-2">جوائز قيمة تنتظرك</h2>
+                            <p class="text-sm md:text-xl text-white/90 mb-4">بطاقات رقمية وتفعيل برامج</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- شريحة 3 -->
+                <div class="slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
+                    <img src="https://img.freepik.com/free-photo/online-payment-security-concept-3d-render_1419-2428.jpg" alt="Banner 3" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h2 class="text-2xl md:text-4xl font-bold mb-2">سدد فواتيرك بسهولة</h2>
+                            <p class="text-sm md:text-lg">خدمات دفع إلكتروني متكاملة وآمنة</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- شريحة 4 -->
+                <div class="slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
+                    <img src="https://img.freepik.com/free-vector/gradient-ui-ux-elements-background_23-2149056159.jpg" alt="Banner 4" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-red-900/90 via-transparent to-transparent flex items-end">
+                        <div class="p-8 text-white w-full text-center">
+                            <h2 class="text-2xl md:text-4xl font-bold mb-2">صمم هويتك الآن</h2>
+                            <p class="text-sm md:text-lg">أداة تصميم البطاقات والخلفيات الجديدة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- أزرار التحكم -->
+            <button onclick="prevSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white w-10 h-10 rounded-full backdrop-blur-sm flex items-center justify-center transition-all z-20">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button onclick="nextSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white w-10 h-10 rounded-full backdrop-blur-sm flex items-center justify-center transition-all z-20">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                <button onclick="goToSlide(0)" class="slider-dot w-2 h-2 rounded-full bg-white transition-all opacity-100"></button>
+                <button onclick="goToSlide(1)" class="slider-dot w-2 h-2 rounded-full bg-white transition-all opacity-50 hover:opacity-100"></button>
+                <button onclick="goToSlide(2)" class="slider-dot w-2 h-2 rounded-full bg-white transition-all opacity-50 hover:opacity-100"></button>
+                <button onclick="goToSlide(3)" class="slider-dot w-2 h-2 rounded-full bg-white transition-all opacity-50 hover:opacity-100"></button>
+            </div>
+        </div>
+
+        <!-- عنوان القسم -->
+        <div class="flex items-center justify-between mb-6 px-2">
+            <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                <span class="w-3 h-8 bg-green-500 rounded-full block"></span>
+                خدمة تصميم البطاقات
+            </h2>
+        </div>
+
+        <!-- الوصف -->
+        <div class="text-center mb-8 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <h3 class="text-xl font-bold text-primary mb-2">قم بإضافة معلوماتك واحصل على تصميم احترافي</h3>
+            <p class="text-gray-500 text-sm">أدخل البيانات في النموذج أدناه، اختر القالب، وحمل بطاقتك فوراً</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- لوحة المدخلات -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-primary/5 rounded-bl-full"></div>
+                    <h3 class="text-lg font-semibold mb-5 flex items-center gap-2 text-primary relative z-10">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        <span>أدخل البيانات</span>
+                    </h3>
+                    <div class="space-y-4 relative z-10">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">اسم المحل / المركز</label>
+                            <input type="text" id="shopName" placeholder="مثال: شبكة المياس للدفع الإلكتروني" class="input-field w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-right" oninput="updateCanvas()">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">رقم التواصل</label>
+                            <input type="text" id="phoneNumber" placeholder="مثال: 773338337" class="input-field w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-right" dir="ltr" oninput="updateCanvas()">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">نص إضافي</label>
+                            <input type="text" id="extraText" placeholder="خدمات الدفع الإلكتروني" class="input-field w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-right" oninput="updateCanvas()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- اختيار القالب -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-semibold mb-5 flex items-center gap-2 text-primary">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span>اختر التصميم</span>
+                    </h3>
+                    <div class="grid grid-cols-3 gap-3">
+  <div class="template-card group" data-id="2">
+                            <img src="images/template_bg.jpg" alt="الجوهرة VIP" class="h-14 w-full object-cover rounded-t-lg">
+                            <div class="p-2 text-center text-xs font-bold text-gray-700">مودرين 1</div>
+                            </div>
+                        <div class="template-card rounded-xl overflow-hidden p-1 relative" onclick="selectTemplate(2)">
+                            <div class="aspect-square bg-gradient-to-bl from-yellow-500 to-orange-400 rounded-lg flex items-center justify-center relative"><span class="text-white font-bold text-lg z-10">2</span></div>
+                            <div class="text-center text-xs font-medium mt-1 text-gray-600">ذهبي</div>
+                            <div class="absolute top-2 left-2 bg-white rounded-full p-1 shadow-md opacity-0 check-icon transition-opacity"><i class="fa-solid fa-check text-primary text-xs"></i></div>
+                        </div>
+                        <div class="template-card rounded-xl overflow-hidden p-1 relative" onclick="selectTemplate(3)">
+                            <div class="aspect-square bg-gradient-to-tr from-gray-800 to-black rounded-lg flex items-center justify-center relative"><span class="text-white font-bold text-lg z-10">3</span></div>
+                            <div class="text-center text-xs font-medium mt-1 text-gray-600">داكن</div>
+                            <div class="absolute top-2 left-2 bg-white rounded-full p-1 shadow-md opacity-0 check-icon transition-opacity"><i class="fa-solid fa-check text-primary text-xs"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المعاينة -->
+            <div class="lg:col-span-7 sticky top-24">
+                <div class="bg-white p-2 rounded-3xl shadow-lg border border-gray-100 canvas-container relative">
+                    <button class="absolute top-4 left-4 bg-gray-900/10 hover:bg-gray-900/20 w-8 h-8 rounded-full flex items-center justify-center transition-colors z-10" onclick="updateCanvas()"><i class="fa-solid fa-rotate-right text-gray-600"></i></button>
+                    <div class="relative w-full aspect-square rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center">
+                        <canvas id="previewCanvas" width="1080" height="1080" class="w-full h-full object-contain"></canvas>
+                        <div id="loadingOverlay" class="absolute inset-0 bg-white/80 flex flex-col items-center justify-center z-10 hidden">
+                            <i class="fa-solid fa-circle-notch fa-spin text-4xl text-primary mb-3"></i>
+                            <span class="text-gray-600 font-medium">جاري إنشاء التصميم...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-center pb-20 md:pb-0">
+                    <button id="downloadBtn" class="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-200 bg-primary rounded-full hover:bg-red-800 hover:shadow-lg hover:shadow-red-500/30 w-full sm:w-auto transform hover:-translate-y-1">
+                        <i class="fa-solid fa-download ml-2 text-lg group-hover:animate-bounce"></i>
+                        تحميل الصورة جاهزة
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- زر الواتساب -->
+        <div class="fixed bottom-6 left-6 z-50">
+            <button onclick="window.open('https://wa.me/967779744100', '_blank')" class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110">
+                <i class="fa-brands fa-whatsapp text-3xl"></i>
+            </button>
+        </div>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="mt-auto pt-16 pb-8 border-t border-gray-100 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-red-50 to-white z-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col items-center text-center mb-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <h2 class="text-3xl font-bold text-gray-800">تطبيق <span class="text-primary">شبكة المياس</span></h2>
+                    <img src="images/logo.png" alt="شبكة المياس" class="h-16 w-auto object-contain">
+                </div>
+                <p class="text-gray-600 text-lg max-w-2xl leading-relaxed">
+                    منصتك الموثوقة لخدمات الدفع الإلكتروني وشحن الألعاب والبطاقات الرقمية. نخدم آلاف العملاء في جميع أنحاء اليمن.
+                </p>
+                <div class="flex gap-6 mt-6">
+                    <a href="https://www.facebook.com" target="_blank" class="text-gray-700 hover:text-primary transition-colors"><i class="fa-brands fa-facebook-f text-2xl"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" class="text-gray-700 hover:text-primary transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                    <a href="https://wa.me/967779744100" target="_blank" class="text-gray-700 hover:text-primary transition-colors"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 mb-10 grayscale hover:grayscale-0 transition-all duration-500 opacity-70 hover:opacity-100">
+                <div class="h-10 w-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center shadow-sm"><i class="fa-brands fa-cc-visa text-blue-900 text-2xl"></i></div>
+                <div class="h-10 w-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center shadow-sm"><i class="fa-brands fa-cc-mastercard text-red-600 text-2xl"></i></div>
+                <div class="h-10 w-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center shadow-sm text-xs font-bold text-gray-600">كريمي</div>
+                <div class="h-10 w-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center shadow-sm text-xs font-bold text-blue-600">ONE</div>
+                <div class="h-10 w-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center shadow-sm text-xs font-bold text-purple-600">Floosak</div>
+                <div class="h-10 w-16 bg-white border border-gray-200 rounded-lg flex items-center justify-center shadow-sm text-xs font-bold text-green-600">Jawali</div>
+            </div>
+            <div class="flex flex-col md:flex-row-reverse items-center justify-between border-t border-gray-200/60 pt-8 gap-4">
+                <div class="flex gap-8 text-gray-600 font-medium">
+                    <a href="#" class="hover:text-primary transition-colors">الشروط</a>
+                    <a href="#" class="hover:text-primary transition-colors">الخصوصية</a>
+                    <a href="#" class="hover:text-primary transition-colors">ملفات تعريف الارتباط</a>
+                </div>
+                <div class="text-gray-500 text-sm flex items-center gap-1">
+                    <span>&copy; 2024 تطبيق شبكة المياس. جميع الحقوق محفوظة.</span>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-xs text-gray-400 font-light">
+                <p>اليمن - البيضاء - رداع | 779744100 - 737672827 | <a href="https://aymanbrand.shop" class="hover:text-gray-600">aymanbrand.shop</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- صورة مخفية للاستخدام في الرسم -->
+    <img id="logoImg" src="images/logo.png" class="hidden">
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
